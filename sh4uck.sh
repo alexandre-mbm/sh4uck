@@ -25,6 +25,11 @@ function install_x2go() {
     apt-get install x2goclient
 }
 
+function install_ssh() {
+    apt-get install openssh-server
+    apt-get install openssh-client
+}
+
 # office
 
 function install_libreoffice() {
@@ -54,7 +59,7 @@ case "$1" in
         ;;
     server) 
         install_x2go
-        # TODO: SSH
+        install_ssh
         # TODO: Scripts de rede
         # TODO: ocsinventoryagent
         # TODO: likewiseopen-5
