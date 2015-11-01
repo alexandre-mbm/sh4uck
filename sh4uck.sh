@@ -15,6 +15,16 @@ function inexistent() {
     echo "alvo \"$1\" não implementado"
 }
 
+# server
+
+function install_x2go() {
+    apt-get install python-software-properties  # 12.04
+    add-apt-repository ppa:x2go/stable
+    apt-get update
+    apt-get install x2goserver x2goserver-xsession
+    apt-get install x2goclient
+}
+
 # office
 
 function install_libreoffice() {
@@ -43,7 +53,7 @@ case "$1" in
         inexistent "internet"
         ;;
     server) 
-        # TODO: X2go
+        install_x2go
         # TODO: SSH
         # TODO: Scripts de rede
         # TODO: ocsinventoryagent
@@ -95,7 +105,7 @@ case "$1" in
         ;;
     *)
         # Ajuda
-        echo "alvos possíveis: internet server xorg office hardware virtual boot apt cron fix"
+        echo "alvos possíveis: internet server xorg office* hardware virtual boot apt cron fix"
         ;;
 esac
 
