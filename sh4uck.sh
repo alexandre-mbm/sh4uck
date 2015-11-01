@@ -5,7 +5,11 @@
 #   $ sh4suck server      # instala software e configurações de rede
 #
 
-# TODO: verificar execução como root
+if [ "$(id -u)" != "0" ]; then
+   echo "erro: este script deve ser executado como root" 1>&2
+   echo "      tente novamente usando o sudo" 1>&2
+   exit 1
+fi
 
 function inexistent() {
     echo "alvo \"$1\" não implementado"
