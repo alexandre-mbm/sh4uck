@@ -17,6 +17,13 @@ function inexistent() {
 
 # office
 
+function install_libreoffice() {
+    add-apt-repository ppa:libreoffice/libreoffice-5-0
+    apt-get update
+    apt-get dist-upgrade
+    apt-get install libreoffice-style-breeze  # tema de ícones
+}
+
 function install_gimp() {
     apt-get install gimp
 }
@@ -53,10 +60,9 @@ case "$1" in
         inexistent "xorg"
         ;;
     office)
-        # TODO: LibreOffice 5
+        install_libreoffice
         install_inkscape
         install_gimp
-        inexistent "office"
         ;;  
     hardware) 
         # TODO: Adicionar todas as impressoras do esquadrão
