@@ -15,6 +15,16 @@ function inexistent() {
     echo "alvo \"$1\" não implementado"
 }
 
+# office
+
+function install_gimp() {
+    apt-get install gimp
+}
+
+function install_inkscape() {
+    apt-get install inkscape
+}
+
 case "$1" in
     internet)
         # TODO: Firefox 28 com atalho e xpi de tradução para português
@@ -44,8 +54,8 @@ case "$1" in
         ;;
     office)
         # TODO: LibreOffice 5
-        # TODO: Inkscape
-        # TODO: Gimp
+        install_inkscape
+        install_gimp
         inexistent "office"
         ;;  
     hardware) 
