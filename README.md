@@ -9,3 +9,9 @@ Na medida do possível, tudo aqui está dedicado ao domínio público sob licen�
 [issues]: ../../issues
 [wiki]: ../..wiki
 [CC0]: https://creativecommons.org/publicdomain/zero/1.0/deed.pt_BR
+
+## Uso
+
+```sh
+wget -O - https://raw.githubusercontent.com/alexandre-mbm/sh4uck/master/get.sh | bash
+```
