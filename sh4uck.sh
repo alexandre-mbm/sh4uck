@@ -50,8 +50,8 @@ function install_libreoffice() {
     HELP_DIR=$(tar -tf download/$OFFICE_HELPPACK | cut -d"/" -f1 | head -n 1)
     LANG_DIR=$(tar -tf download/$OFFICE_LANGPACK | cut -d"/" -f1 | head -n 1)
     dpkg -i download/$PACK_DIR/DEBS/*
-    dpkg -i download/$HELP_DIR/DEBS/*
     dpkg -i download/$LANG_DIR/DEBS/*
+    dpkg -i download/$HELP_DIR/DEBS/*
 }
 
 function install_gimp() {
