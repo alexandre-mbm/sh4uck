@@ -11,6 +11,10 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
+source dist/vars.sh
+
+mkdir download
+
 function inexistent() {
     echo "alvo \"$1\" não implementado"
 }
@@ -33,10 +37,21 @@ function install_ssh() {
 # office
 
 function install_libreoffice() {
-    add-apt-repository ppa:libreoffice/libreoffice-5-0
-    apt-get update
-    apt-get dist-upgrade
-    apt-get install libreoffice-style-breeze  # tema de ícones
+    apt-get remove --purge libreoffice*
+    apt-get clean
+    apt-get autoremove
+    wget -c $OFFICE_DIR/$OFFICE_PACKPACK -P download
+    wget -c $OFFICE_DIR/$OFFICE_HELPPACK -P download
+    wget -c $OFFICE_DIR/$OFFICE_LANGPACK -P download
+    tar -xzvf download/$OFFICE_PACKPACK -C download
+    tar -xzvf download/$OFFICE_HELPPACK -C download
+    tar -xzvf download/$OFFICE_LANGPACK -C download
+    PACK_DIR=$(tar -tf download/$OFFICE_PACKPACK | cut -d"/" -f1 | head -n 1)
+    HELP_DIR=$(tar -tf download/$OFFICE_HELPPACK | cut -d"/" -f1 | head -n 1)
+    LANG_DIR=$(tar -tf download/$OFFICE_LANGPACK | cut -d"/" -f1 | head -n 1)
+    dpkg -i download/$PACK_DIR/DEBS/*
+    dpkg -i download/$HELP_DIR/DEBS/*
+    dpkg -i download/$LANG_DIR/DEBS/*
 }
 
 function install_gimp() {
