@@ -14,4 +14,6 @@ Na medida do possível, tudo aqui está dedicado ao domínio público sob licen�
 
 ```sh
 wget -O - https://raw.githubusercontent.com/alexandre-mbm/sh4uck/master/get.sh | bash
+cd ~/sh4uck
+bash configure.sh ARQUIVO
 ```
