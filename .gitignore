@@ -1,2 +1,4 @@
+dist/
 download/
 *.tar.gz
+client_secrets.json
