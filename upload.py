@@ -28,12 +28,12 @@
 # INSTRUÇÕES
 # ----------
 #
-# Caso você esteja fazendo sua própria instalação de aplitivo, siga
+# Caso você esteja fazendo sua própria instalação de aplicativo, siga
 #
 #  http://pythonhosted.org/PyDrive/quickstart.html#authentication
 #
-# tenha seu arquivo client_secrets.json junto a este script, e não
-# esqueça de ajustas (a seguir) os valores de filename e parent_id.
+# tenha o seu arquivo client_secrets.json junto a este script, e não
+# esqueça de ajustar (a seguir) os valores de filename e parent_id.
 
 filename = 'ubuntu-12.04-32bits.tar.gz'
 parent_id = '0BwPbMA6_Ph2JS0RUSk9yM19kNVE'  # ex.: uma pasta "sh4uck privado"
@@ -49,7 +49,9 @@ with tarfile.open(filename, "w:gz") as tar:
 
 # Dependências:
 #
-#   - sudo pip search pydrive
+#   - sudo pacman -S pip2
+#   - sudo pip2 install pydrive
+#
 #   - navegador padrão em modo gráfico (para autenticação e cookie)
 #
 # Documentação:
